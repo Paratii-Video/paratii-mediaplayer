@@ -1,0 +1,63 @@
+// Structure
+// Extends/Classes
+
+.player-tooltip {
+  background-color: @color-purple;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px 3px;
+  text-align: center;
+
+  &.small {
+    font-size: 10px;
+    padding: 2px 4px 1px;
+  }
+}
+
+
+// Embed
+
+.embed {
+  #nav{
+    #debug{
+      display: none
+    }
+    #clear-repo{
+      display: none
+    }
+  }
+}
+
+
+// Flip
+
+.flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  &-face {
+    &:extend(.pos-a-full all);
+
+    backface-visibility: hidden;
+
+    &-front {
+      transition: transform 1s @ease-smooth;
+
+      .active & {
+        transform: rotateY(180deg);
+        transition: transform 1.2s @ease-smooth;
+      }
+    }
+    &-back {
+      transform: rotateY(180deg);
+      transition: transform 1s @ease-smooth;
+      
+      .active & {
+        transform: rotateY(0);
+        transition: transform 1.2s @ease-smooth;
+      }
+    }
+  }
+}

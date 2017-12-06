@@ -3,6 +3,7 @@
 console.log('PARATII EXPERIMENTS')
 
 const Clappr = require('clappr')
+const Controls = require('./controls')
 const HlsjsIpfsLoader = require('hlsjs-ipfs-loader')
 const IPFS = require('ipfs')
 
@@ -47,7 +48,9 @@ const vid = new Clappr.Player({
       ipfs: node,
       ipfsHash: 'QmQvhvzMXKX71jLGjSfM9iKiWVKETXDmkPaQXhe4WrMmZ9'
     }
-  }
+  },
+  hideMediaControl: false,
+  mediacontrol: { external: Controls }
 })
 
 function runExperiment (name, cb) {
