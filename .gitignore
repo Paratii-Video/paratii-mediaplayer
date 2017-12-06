@@ -58,3 +58,6 @@ typings/
 .env
 
 build/
+
+# package lock
+package-lock.json

@@ -73,8 +73,25 @@ gulp.task('webpack', () => {
             // plugins: ['transform-runtime'],
             presets: ['es2015']
           }
+        }, {
+          test: /\.scss$/,
+          use: [{
+            loader: 'style-loader' // creates style nodes from JS strings
+          }, {
+            loader: 'css-loader' // translates CSS into CommonJS
+          }, {
+            loader: 'sass-loader' // compiles Sass to CSS
+          }]
+        }, {
+          test: /\.(html)$/,
+          use: {
+            loader: 'html-loader',
+            options: {
+              attrs: [':data-src']
+            }
+          }
         }
-        // { test: /\.hbs$/, loader: "handlebars-loader" }
+        // { test: /\.hbs$/, loader: 'handlebars-loader' }
       ]
     },
     node: {
