@@ -30,7 +30,7 @@
   "dependencies": {
     "clappr": "^0.2.78",
     "clappr-nerd-stats": "0.0.8",
-    "clappr-stats": "^0.1.2",
+    "clappr-stats": "github:ya7ya/clappr-stats#master",
     "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#paratii/v0.27",
     "ipfs": "github:ya7ya/js-ipfs#paratii/v0.27",
     "level-selector": "github:clappr/clappr-level-selector-plugin#master",
