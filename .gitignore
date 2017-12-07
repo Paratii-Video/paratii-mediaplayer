@@ -60,4 +60,4 @@ typings/
 build/
 
 # package lock
-package-lock.json
+# package-lock.json
