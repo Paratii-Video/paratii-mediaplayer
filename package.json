@@ -4,7 +4,11 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard"
+  },
+  "browser": {
+    "Clappr": "./node_modules/clappr/dist/clappr.js"
   },
   "author": "Yahya",
   "license": "ISC",
@@ -15,12 +19,29 @@
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.2",
-    "webpack": "^3.8.1",
+    "html-loader": "^0.5.1",
+    "node-sass": "^4.7.2",
+    "pre-commit": "^1.2.2",
+    "sass-loader": "^6.0.6",
+    "standard": "^10.0.3",
+    "webpack": "^3.10.0",
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
     "clappr": "^0.2.78",
-    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#master",
-    "ipfs": "github:ya7ya/js-ipfs#paratii/master"
+    "clappr-nerd-stats": "0.0.8",
+    "clappr-stats": "github:ya7ya/clappr-stats#master",
+    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#paratii/v0.27",
+    "ipfs": "github:ya7ya/js-ipfs#paratii/v0.27",
+    "level-selector": "github:clappr/clappr-level-selector-plugin#master",
+    "uniq": "^1.0.1"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "standard": {
+    "ignore": [
+      "src/js/level-selector"
+    ]
   }
 }
