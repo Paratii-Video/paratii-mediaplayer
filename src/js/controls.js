@@ -4,13 +4,28 @@ const styles = require('styles/controls.less')
 
 class ParatiiMediaControl extends Clappr.MediaControl {
   get template() {
-    console.log(MediaControl)
     return Clappr.template(
       MediaControl
     )
   }
   constructor(options = {}) {
-      super(options);
+    super(options);
+  }
+
+  initializeIcons() {
+    super.initializeIcons();
+    this.$playPauseToggle.removeClass('video-paused');
+  }
+
+  togglePlayPause() {
+    console.log('here');
+    super.togglePlayPause();
+
+    if (this.container.isPlaying()) {
+      this.$playPauseToggle.removeClass('video-paused');
+    } else {
+      this.$playPauseToggle.addClass('video-paused');
+    }
   }
 }
 

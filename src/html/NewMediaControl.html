@@ -52,19 +52,19 @@
           }
         });
       }; %>
-  <% if (settings.default && settings.default.length) { %>
-  <div class="media-control-center-panel" data-media-control>
-    <% render(settings.default); %>
+  <% if (false) { %>
+  <div class="media-control-left-panel" data-media-control>
   </div>
   <% } %>
   <% if (settings.left && settings.left.length) { %>
-  <div class="media-control-left-panel" data-media-control>
+  <div class="media-control-center-panel" data-media-control>
     <% render(settings.left); %>
+    <% render(settings.default); %>
+    <% render(settings.right); %>
   </div>
   <% } %>
-  <% if (settings.right && settings.right.length) { %>
+  <% if (false) { %>
   <div class="media-control-right-panel" data-media-control>
-    <% render(settings.right); %>
   </div>
   <% } %>
 </div>
