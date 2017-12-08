@@ -40,21 +40,17 @@ var config = {
         loader: 'css-loader',
       }, {
         loader: 'less-loader',
-        options: {
-          includPaths: stylesDir
-        }
       }]
     }, {
-      test: /index.less$/,
+      test: /\.scss$/,
       include: stylesDir,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-          loader: 'css-loader'
-        }, {
-          loader: 'sass-loader'
-        }]
-      })
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+      }, {
+        loader: 'sass-loader',
+      }]
     }, {
       test: /\.html$/,
       loader: 'html-loader',

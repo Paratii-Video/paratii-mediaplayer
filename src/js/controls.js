@@ -1,11 +1,17 @@
 const Clappr = require('clappr')
 const MediaControl = require('../html/NewMediaControl.html')
-const styles = require('styles/controls.less')
+const styles = require('styles/controls.scss')
 
 class ParatiiMediaControl extends Clappr.MediaControl {
   get template() {
     return Clappr.template(
       MediaControl
+    )
+  }
+
+  get stylesheet () {
+    return Clappr.Styler.getStyleFor(
+      ``
     )
   }
   constructor(options = {}) {
