@@ -24,7 +24,6 @@ class ParatiiMediaControl extends Clappr.MediaControl {
   }
 
   togglePlayPause() {
-    console.log('here');
     super.togglePlayPause();
 
     if (this.container.isPlaying()) {
