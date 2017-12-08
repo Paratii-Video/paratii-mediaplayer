@@ -21,11 +21,9 @@ $size-player-controls-button-height-mini: 15px;
     pointer-events: auto;
     cursor: -webkit-grabbing !important;
     cursor: grabbing !important;
-    /*cursor: url("./closed-hand.cur"), move;*/
     * {
       cursor: -webkit-grabbing !important;
       cursor: grabbing !important;
-      /*cursor: url("./closed-hand.cur"), move;*/
     }
   }
 
@@ -61,16 +59,16 @@ $size-player-controls-button-height-mini: 15px;
       width: 32px;
       height: 32px;
       cursor: pointer;
-      background-repeat: no-repeat!important;
+      background-repeat: no-repeat;
       background-position: center center;
-      background-color: $color-grey!important;
+      background-color: $color-grey;
       mask-repeat: no-repeat;
       mask-position: center;
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-position: center;
 
       &:hover {
-        background-color: $color-white!important;
+        background-color: $color-white;
       }
 
       &:focus {
@@ -120,7 +118,7 @@ $size-player-controls-button-height-mini: 15px;
     }
 
     .media-control-center-panel[data-media-control] {
-      position: static!important;
+      position: static;
       display: flex;
       align-items: center;
       width: 100%;
@@ -128,7 +126,7 @@ $size-player-controls-button-height-mini: 15px;
       flex: 1 1 0;
 
       [data-hd-indicator] {
-        display: none!important;
+        display: none;
       }
 
       .bar-container[data-seekbar] {
@@ -142,8 +140,8 @@ $size-player-controls-button-height-mini: 15px;
 
         .bar-background[data-seekbar] {
           background: rgba(255, 255, 255, .3);
-          height: 5px!important;
-          top: 0px!important;
+          height: 5px;
+          top: 0px;
           border-radius: 10px;
           width: 100%;
           position: relative;
@@ -167,7 +165,7 @@ $size-player-controls-button-height-mini: 15px;
           }
 
           .bar-hover[data-seekbar] {
-            top: -1px!important;
+            top: -1px;
             position: absolute;
             top: -3px;
             width: 5px;
@@ -241,14 +239,14 @@ $size-player-controls-button-height-mini: 15px;
           margin: 0 6px;
         }
         &.bar-container {
-          float: none!important;
-          top: 0!important;
+          float: none;
+          top: 0;
           margin-right: 0;
           width: 42px;
           transition: width .2s ease-out;
 
           .segmented-bar-element {
-            box-shadow: $color-grey 2px 0 0!important;
+            box-shadow: $color-grey 2px 0 0;
             float: left;
             width: 4px;
             padding-left: 2px;
@@ -308,5 +306,5 @@ $size-player-controls-button-height-mini: 15px;
 }
 
 .seek-time[data-seek-time] {
-  display: none!important;
+  display: none;
 }
