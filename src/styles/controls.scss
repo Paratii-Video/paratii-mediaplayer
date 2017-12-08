@@ -17,6 +17,20 @@ $size-player-controls-button-height-mini: 15px;
   z-index: 9999;
   pointer-events: none;
 
+  &.media-control-hide {
+    .media-control-background[data-background] {
+      opacity: 0;
+    }
+    .media-control-layer[data-controls] {
+      bottom: -50px;
+      .bar-container[data-seekbar]{
+        .bar-scrubber[data-seekbar] {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
   &.dragging {
     pointer-events: auto;
     cursor: -webkit-grabbing !important;
