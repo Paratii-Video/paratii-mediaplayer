@@ -18,14 +18,21 @@ class ParatiiMediaControl extends Clappr.MediaControl {
     super(options);
   }
 
+  addEventListeners() {
+    super.addEventListeners();
+
+    if (this.container) {
+      this.listenTo(this.container, Clappr.Events.CONTAINER_PLAY, this.togglePlayPause)
+      this.listenTo(this.container, Clappr.Events.CONTAINER_PAUSE, this.togglePlayPause)
+    }
+  }
+
   initializeIcons() {
     super.initializeIcons();
     this.$playPauseToggle.removeClass('video-paused');
   }
 
   togglePlayPause() {
-    super.togglePlayPause();
-
     if (this.container.isPlaying()) {
       this.$playPauseToggle.removeClass('video-paused');
     } else {
