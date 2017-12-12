@@ -2,7 +2,7 @@
   "name": "paratii-mediaplayer",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "build/bundle.js",
   "scripts": {
     "dev": "npm run clean && npm run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors",
     "build": "npm run clean && npm run prep && NODE_ENV=production webpack --progress --colors",
