@@ -1,14 +1,14 @@
 {
-  "name": "paratii-mediaplayer",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@paratii-video/paratii-mediaplayer",
+  "version": "0.0.0",
+  "description": "Clappr-based video player for Paratii",
   "main": "build/bundle.js",
   "scripts": {
     "dev": "npm run clean && npm run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors",
     "build": "npm run clean && npm run prep && NODE_ENV=production webpack --progress --colors",
     "prep": "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
     "clean": "rm -rf build/",
-    "postinstall": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "author": "Yahya",
   "license": "ISC",
@@ -35,5 +35,13 @@
     "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#master",
     "ipfs": "github:ya7ya/js-ipfs#paratii/master",
     "ipfs-bitswap": "^0.17.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paratii-Video/paratii-mediaplayer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Paratii-Video/paratii-mediaplayer/issues"
+  },
+  "homepage": "https://github.com/Paratii-Video/paratii-mediaplayer#readme"
 }
