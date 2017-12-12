@@ -14,7 +14,7 @@ var config = {
     path: buildDir,
     filename: 'bundle.js',
     library: 'paratii-mediaplayer',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs2'
   },
   resolve: {
     alias: {
