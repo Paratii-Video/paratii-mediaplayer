@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var srcDir = path.resolve(__dirname, 'src');
 var jsDir = srcDir + '/js';
@@ -58,10 +57,7 @@ var config = {
       test: /\.svg$/,
       loader: 'url-loader'
     }]
-  },
-  plugins: [
-    new ExtractTextPlugin((!prod ? buildDir : '.') + '/index.css')
-  ]
+  }
 };
 
 
