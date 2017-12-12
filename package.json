@@ -7,7 +7,8 @@
     "dev": "npm run clean && npm run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors",
     "build": "npm run clean && npm run prep && NODE_ENV=production webpack --progress --colors",
     "prep": "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
-    "clean": "rm -rf build/"
+    "clean": "rm -rf build/",
+    "postinstall": "npm run build"
   },
   "author": "Yahya",
   "license": "ISC",
