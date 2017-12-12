@@ -12,7 +12,9 @@ var config = {
   entry: jsDir + '/app.js',
   output: {
     path: buildDir,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    library: 'paratii-mediaplayer',
+    libraryTarget: 'umd'
   },
   resolve: {
     alias: {
