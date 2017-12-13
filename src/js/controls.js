@@ -52,9 +52,10 @@ class ParatiiMediaControl extends Clappr.MediaControl {
 
   mousemoveOnSeekBar(event) {
     if (this.settings.seekEnabled) {
-      let offsetX = event.pageX - this.$seekBarContainer.offset().left - (this.$seekBarHover.width() / 2)
-      offsetX = Math.max(0, offsetX)
-      offsetX = Math.min(offsetX, this.$seekBarContainer.width())
+      const seekBarHoverWidth = this.$seekBarHover.width()
+      let offsetX = event.pageX - this.$seekBarContainer.offset().left - (seekBarHoverWidth / 2)
+      offsetX = Math.max(-seekBarHoverWidth / 2, offsetX)
+      offsetX = Math.min(offsetX, this.$seekBarContainer.width() - seekBarHoverWidth / 2)
       this.$seekBarHover.css({left: offsetX})
     }
     this.trigger(Events.MEDIACONTROL_MOUSEMOVE_SEEKBAR, event)
