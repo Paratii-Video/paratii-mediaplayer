@@ -1,8 +1,8 @@
 'use strict'
 
-
 const Clappr = require('clappr')
 const Controls = require('./controls')
+const NoSeekTime = require('./plugins/NoSeekTime')
 
 const HlsjsIpfsLoader = require('hlsjs-ipfs-loader')
 const IPFS = require('ipfs')
@@ -53,4 +53,4 @@ module.exports = ({ selector, source, poster, mimeType, ipfsHash, ...rest }) => 
     }
   },
   ...rest
-});
+})
