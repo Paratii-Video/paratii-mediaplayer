@@ -40,7 +40,7 @@ _Note: The `paratii-mediaplayer` bundle will rebuild on file changes._
 In `paratii-player`:
 
 ```bash
-$ npm link @paratii-video/paratii-mediaplayer
+$ npm link paratii-mediaplayer
 $ npm run dev-concurrently
 ```
 

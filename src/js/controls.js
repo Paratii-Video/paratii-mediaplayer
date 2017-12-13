@@ -5,17 +5,17 @@ const styles = require('styles/controls.scss')
 const { Events } = Clappr;
 
 class ParatiiMediaControl extends Clappr.MediaControl {
-  // get template() {
-  //   return Clappr.template(
-  //     MediaControl
-  //   )
-  // }
+  get template() {
+    return Clappr.template(
+      MediaControl
+    )
+  }
 
-  // get stylesheet () {
-  //   return Clappr.Styler.getStyleFor(
-  //     ``
-  //   )
-  // }
+  get stylesheet () {
+    return Clappr.Styler.getStyleFor(
+      ``
+    )
+  }
 
   constructor(options = {}) {
     super(options);
