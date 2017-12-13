@@ -2,6 +2,8 @@ const Clappr = require('clappr')
 const MediaControl = require('../html/NewMediaControl.html')
 const styles = require('styles/controls.scss')
 
+const { Events } = Clappr;
+
 class ParatiiMediaControl extends Clappr.MediaControl {
   get template() {
     return Clappr.template(
@@ -22,8 +24,8 @@ class ParatiiMediaControl extends Clappr.MediaControl {
   addEventListeners() {
     super.addEventListeners();
     if (this.container) {
-      this.listenTo(this.container, Clappr.Events.CONTAINER_PLAY, this.updatePlayPauseButton)
-      this.listenTo(this.container, Clappr.Events.CONTAINER_PAUSE, this.updatePlayPauseButton)
+      this.listenTo(this.container, Events.CONTAINER_PLAY, this.updatePlayPauseButton)
+      this.listenTo(this.container, Events.CONTAINER_PAUSE, this.updatePlayPauseButton)
     }
   }
 
@@ -46,6 +48,16 @@ class ParatiiMediaControl extends Clappr.MediaControl {
   togglePlayPause() {
     super.togglePlayPause();
     this.updatePlayPauseButton();
+  }
+
+  mousemoveOnSeekBar(event) {
+    if (this.settings.seekEnabled) {
+      let offsetX = event.pageX - this.$seekBarContainer.offset().left - (this.$seekBarHover.width() / 2)
+      offsetX = Math.max(0, offsetX)
+      offsetX = Math.min(offsetX, this.$seekBarContainer.width())
+      this.$seekBarHover.css({left: offsetX})
+    }
+    this.trigger(Events.MEDIACONTROL_MOUSEMOVE_SEEKBAR, event)
   }
 }
 
