@@ -1,9 +1,7 @@
 'use strict'
-
-console.log('PARATII EXPERIMENTS')
-
 const Clappr = require('clappr')
 const Controls = require('./controls')
+const NoSeekTime = require('./plugins/NoSeekTime')
 
 const vid = new Clappr.Player({
   // source: 'https://gateway.paratii.video/ipfs/QmNZS5J3LS1tMEVEP3tz3jyd2LXUEjkYJHyWSuwUvHDaRJ', // original mp4
@@ -16,4 +14,5 @@ const vid = new Clappr.Player({
   watermarkLink: 'http://paratii.video/',
   hideMediaControl: false,
   mediacontrol: { external: Controls },
+  plugins: [NoSeekTime]
 })
