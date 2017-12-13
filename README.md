@@ -17,10 +17,31 @@ $ cd paratii-mediaplayer
 $ npm install
 ```
 
-## run in dev mode
+## Developing
+
+### Demo app
 
 ```bash
 $ npm run dev
 ```
 
-And then visit `http://localhost:8080`
+Then visit `http://localhost:8080`.
+
+### paratii-player
+
+In `paratii-mediaplayer`:
+
+```bash
+$ npm link
+$ npm run build:watch 
+```
+_Note: The `paratii-mediaplayer` bundle will rebuild on file changes._
+
+In `paratii-player`:
+
+```bash
+$ npm link @paratii-video/paratii-mediaplayer
+$ npm run dev-concurrently
+```
+
+_Note: You **will** need to restart `paratii-player` if it was previously running._
