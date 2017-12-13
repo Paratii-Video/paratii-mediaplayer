@@ -30,8 +30,10 @@ const node = new IPFS({
   }
 })
 
-module.exports = ({ source, selector, mimeType, ipfsHash, ...rest }) => new Clappr.Player({
+module.exports = ({ selector, source, poster, mimeType, ipfsHash, ...rest }) => new Clappr.Player({
   // source: '/video/tsn.mp4',
+  source,
+  poster,
   mimeType,
   parentId: selector,
   // mediacontrol: { external: Controls },
