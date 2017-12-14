@@ -5,12 +5,6 @@ machine:
 dependencies:
   override:
     - yarn
-    # - if [ ! -f ~/.meteor/meteor ]; then curl https://install.meteor.com | /bin/sh; fi
-    - curl https://install.meteor.com | /bin/sh
-    # - touch ~/.meteor/packages/meteor-tool/1\.4\.3_1
-    - npm install
-    # if any project packages were updated, this will download and install them
-    - meteor list
   cache_directories:
     # - "~/paratii-mediaplayer/node_modules"
 test:
