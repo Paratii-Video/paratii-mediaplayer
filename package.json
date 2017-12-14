@@ -17,7 +17,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["prettier --write", "git add"]
+    "*.js": ["eslint --cache", "prettier --write", "git add"]
   },
   "author": "Yahya",
   "license": "ISC",
