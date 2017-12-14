@@ -21,7 +21,7 @@ deployment:
   staging:
     tag: /v[0-9]+(\.[0-9]+)*/
     commands:
-      - yarn publish --tag dev
+      - yarn publish --tag staging
   release:
     tag: /release-v[0-9]+(\.[0-9]+)*/
     commands:
