@@ -26,9 +26,3 @@ deployment:
     tag: /release-v[0-9]+(\.[0-9]+)*/
     commands:
       - bash ./scripts/release-prod.sh
-
-notify:
-  webhooks:
-    # A list of hook hashes, containing the url field
-    # gitter hook
-    - url: https://webhooks.gitter.im/e/9facb9efda66adc53234
