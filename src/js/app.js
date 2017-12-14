@@ -34,6 +34,7 @@ module.exports = ({ selector, source, poster, mimeType, ipfsHash, ...rest }) =>
       "http://paratii.video/imagens/cropped-logo_colorido_horizontal.png",
     position: "top-right",
     watermarkLink: "http://paratii.video/",
+    plugins: [NoSeekTime],
     playback: {
       hlsjsConfig: {
         loader: HlsjsIpfsLoader,

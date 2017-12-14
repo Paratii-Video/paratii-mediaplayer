@@ -4,13 +4,10 @@
   "description": "Clappr-based video player for Paratii",
   "main": "build/bundle.js",
   "scripts": {
-    "dev":
-      "npm run clean && npm run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors",
-    "build":
-      "npm run clean && npm run prep && NODE_ENV=production webpack --progress --colors",
+    "dev": "npm run clean && npm run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors",
+    "build": "npm run clean && npm run prep && NODE_ENV=production webpack --progress --colors",
     "build:watch": "npm run build -- --watch",
-    "prep":
-      "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
+    "prep": "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
     "clean": "rm -rf build/",
     "prepublishOnly": "npm run build",
     "lint": "eslint src test --ext .js --cache"
@@ -26,6 +23,7 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.13.1",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-prettier": "^2.3.1",
     "html-loader": "^0.5.1",
     "node-sass": "^4.7.2",
