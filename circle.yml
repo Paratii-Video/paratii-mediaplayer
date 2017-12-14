@@ -18,11 +18,7 @@ test:
     - yarn lint
     - yarn run build
 deployment:
-  staging:
+  release:
     tag: /v[0-9]+(\.[0-9]+)*/
     commands:
-      - yarn publish --tag staging
-  release:
-    tag: /release-v[0-9]+(\.[0-9]+)*/
-    commands:
-      - bash ./scripts/release-prod.sh
+      - yarn publish

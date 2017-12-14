@@ -51,6 +51,4 @@ _Note: You **will** need to restart `paratii-player` if it was previously runnin
 
 - Create a feature branch off of `master`
 - When ready, merge into `master` and run ```yarn version <patch|minor|major> && git push --follow-tags```
- - this will have `CircleCI` publish a new version `x.x.x` with the `staging` `dist-tag`
-- When ready to remove the `staging` tag, run `git tag -a release-vx.x.x` on the commit that was published, add an annotation of `release vx.x.x`, and `git push --follow-tags`
- - this will instruct `CircleCI` to place the dist-tag `latest` on `x.x.x`, taking it out of `staging`
+ - this will have `CircleCI` publish a new version `x.x.x` to the `npm` registry
