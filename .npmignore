@@ -1,3 +1,7 @@
 .git/
 src/
 public/
+.eslintignore
+.eslintrc
+.babelrc
+webpack.config.js
