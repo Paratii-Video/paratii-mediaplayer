@@ -1,0 +1,118 @@
+// Helpers
+
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+// Hide text while making it readable for screen readers. Needed in WebKit-based browsers because of an implementation bug. See https://code.google.com/p/chromium/issues/detail?id=457146
+
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+// Hide element while making it readable for screen readers. Shamelessly borrowed from HTML5Boilerplate: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.simple-hidden {
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.simple-unhidden {
+  pointer-events: initial;
+  position: initial;
+  visibility: initial;
+}
+
+// Hide on
+
+.hide-mobile {
+  .mobile & {
+    display: none;
+  }
+}
+
+.only-mobile {
+  display: none;
+
+  .mobile & {
+    display: block;
+  }
+}
+
+
+// Hovers
+
+.hover-opacity {
+  transition: opacity .3s;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+
+// Block
+
+.full-block {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.full-wh {
+  height: 100%;
+  width: 100%;
+}
+
+
+// Position
+
+.pos-a-full {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.pos-f-full {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+// middle
+
+.pos-a-m {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+// vertical middle
+
+.pos-a-vm {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}

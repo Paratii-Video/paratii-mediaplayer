@@ -7,17 +7,41 @@ Clapprjs vs videojs
 
 **WORK IN PROGRESS**
 
+
 ## Installation
 
-TODO
-
-## development mode
 
 ```bash
-$ git clone https://github.com/ya7ya/paratii-experiments.git
-$ cd clappr-integration
+$ git clone https://github.com/Paratii-Video/paratii-mediaplayer
+$ cd paratii-mediaplayer
 $ npm install
-$ npm install -g gulp
-$ gulp
-
 ```
+
+## Developing
+
+### Demo app
+
+```bash
+$ npm run dev
+```
+
+Then visit `http://localhost:8080`.
+
+### paratii-player
+
+In `paratii-mediaplayer`:
+
+```bash
+$ npm link
+$ npm run build:watch 
+```
+_Note: The `paratii-mediaplayer` bundle will rebuild on file changes._
+
+In `paratii-player`:
+
+```bash
+$ npm link paratii-mediaplayer
+$ npm run dev-concurrently
+```
+
+_Note: You **will** need to restart `paratii-player` if it was previously running._

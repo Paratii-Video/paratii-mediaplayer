@@ -1,0 +1,60 @@
+$color-black: #000;
+$color-grey-light-1: #E4E4E4;
+$color-grey-light: #A6A6A6;
+$color-grey: #95989A;
+$color-grey-dark: #909090;
+$color-green: #37DF81;
+$color-purple: #7D70FF;
+$color-purple-dark: #3A2DBB;
+$color-red: #FF415B;
+$color-white: #fff;
+$color-white-dark: #F0F0F0;
+$color-yellow: #ffc541;
+
+// z-index
+
+$zindex-app-container: 5;
+$zindex-nav-overlay: 10;
+$zindex-main-loader: 15;
+$zindex-main-nav: 20;
+$zindex-alert: 25;
+$zindex-modal: 30;
+
+$zindex-player-overlay: 5;
+$zindex-player-infos: 10;
+$zindex-player-controls: 15;
+$zindex-player-share: 20;
+$zindex-player-button-fullscreen: 25;
+
+// Player screens
+
+$screen-tiny-height: 200px;
+$screen-tiny-width: 400px;
+$screen-mini-height: 280px;
+$screen-mini-width: 490px;
+$screen-large-height: 1080px;
+$screen-large-width: 1920px;
+
+// Media-queries screens
+
+$screen-fullhd: 1920px;
+$screen-notebook: 1366px;
+$screen-tablet: 1024px;
+$screen-phablet: 767px;
+$screen-mobile: 420px;
+$screen-mobile2: 375px;
+$screen-mobile3: 320px;
+
+// Sizes
+
+$size-main-nav-maximized-width: 220px;
+$size-main-nav-minimized-width: 60px;
+$size-main-nav-width: 60px;
+$size-main-nav-icon: 30px;
+
+// Player Controls
+
+//Vars
+
+$size-player-controls-button-height: 15px;
+$size-player-controls-button-height-mini: 15px;
