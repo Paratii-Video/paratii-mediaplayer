@@ -13,7 +13,11 @@
       "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
     "clean": "rm -rf build/",
     "prepublishOnly": "yarn run build",
-    "lint": "eslint src test --ext .js --cache"
+    "lint": "eslint src test --ext .js --cache",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --write", "git add"]
   },
   "author": "Yahya",
   "license": "ISC",
@@ -29,6 +33,8 @@
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-prettier": "^2.3.1",
     "html-loader": "^0.5.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "node-sass": "^4.7.2",
     "prettier": "^1.9.2",
     "sass-loader": "^6.0.6",
