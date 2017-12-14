@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.9.1
+    working_directory: /tmp/paratii-mediaplayer
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-deps-{{ checksum "yarn.lock" }}
+          - yarn-deps-
+      - run: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-deps-{{ checksum "yarn.lock" }}
+      - run: yarn lint
+  deploy:
+    docker:
+      - image: circleci/node:8.9.1
+    working_directory: /tmp/paratii-mediaplayer
+    steps:
+      - run:
+          name: Deploy to npm
+          command: yarn publish
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy-job:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+            tags:
+              only: /v[0-9]+(\.[0-9]+)*/
+            
