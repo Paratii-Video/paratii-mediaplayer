@@ -1,13 +1,10 @@
 'use strict'
 
 const Clappr = require('clappr')
-const Controls = require('./controls')
-const NoSeekTime = require('./plugins/NoSeekTime')
-
 const HlsjsIpfsLoader = require('hlsjs-ipfs-loader')
 const IPFS = require('ipfs')
-const LevelSelector = require('./level-selector/level-selector.js')
-const ClapprStats = require('clappr-stats')
+const Controls = require('./controls')
+const NoSeekTime = require('./plugins/NoSeekTime')
 
 const node = new IPFS({
   bitswap: {

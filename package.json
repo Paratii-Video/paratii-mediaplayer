@@ -9,8 +9,7 @@
     "build:watch": "npm run build -- --watch",
     "prep": "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
     "clean": "rm -rf build/",
-    "prepublishOnly": "npm run build",
-    "build:watch": "npm run build -- --watch"
+    "prepublishOnly": "npm run build"
   },
   "author": "Yahya",
   "license": "ISC",
