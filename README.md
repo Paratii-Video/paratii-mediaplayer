@@ -14,7 +14,7 @@ Clapprjs vs videojs
 ```bash
 $ git clone https://github.com/Paratii-Video/paratii-mediaplayer
 $ cd paratii-mediaplayer
-$ npm install
+$ yarn
 ```
 
 ## Developing
@@ -22,7 +22,7 @@ $ npm install
 ### Demo app
 
 ```bash
-$ npm run dev
+$ yarn run dev
 ```
 
 Then visit `http://localhost:8080`.
@@ -32,16 +32,23 @@ Then visit `http://localhost:8080`.
 In `paratii-mediaplayer`:
 
 ```bash
-$ npm link
-$ npm run build:watch 
+$ yarn link
+$ yarn run build:watch 
 ```
 _Note: The `paratii-mediaplayer` bundle will rebuild on file changes._
 
 In `paratii-player`:
 
 ```bash
-$ npm link paratii-mediaplayer
+$ yarn link paratii-mediaplayer
 $ npm run dev-concurrently
 ```
 
 _Note: You **will** need to restart `paratii-player` if it was previously running._
+
+## Deploying
+
+
+- Create a feature branch off of `master`
+- When ready, merge into `master` and run ```yarn version <patch|minor|major> && git push --follow-tags```
+ - this will have `CircleCI` publish a new version `x.x.x` to the `npm` registry
