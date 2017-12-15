@@ -6,23 +6,29 @@ const IPFS = require("ipfs");
 const Controls = require("./controls");
 const NoSeekTime = require("./plugins/NoSeekTime");
 
-const node = new IPFS({
-  bitswap: {
-    maxMessageSize: 128 * 1024
-  },
-  repo: "paratii-" + String(Math.random() + Date.now()).replace(/\./g, ""),
-  config: {
-    Addresses: {
-      Swarm: ["/dns4/star.paratii.video/tcp/443/wss/p2p-webrtc-star"]
+module.exports = ({
+  selector,
+  source,
+  poster,
+  mimeType,
+  ipfsHash,
+  ...rest
+}) => {
+  const node = new IPFS({
+    bitswap: {
+      maxMessageSize: 128 * 1024
     },
-    Bootstrap: [
-      "/dns4/bootstrap.paratii.video/tcp/443/wss/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW"
-    ]
-  }
-});
-
-module.exports = ({ selector, source, poster, mimeType, ipfsHash, ...rest }) =>
-  new Clappr.Player({
+    repo: "paratii-" + String(Math.random() + Date.now()).replace(/\./g, ""),
+    config: {
+      Addresses: {
+        Swarm: ["/dns4/star.paratii.video/tcp/443/wss/p2p-webrtc-star"]
+      },
+      Bootstrap: [
+        "/dns4/bootstrap.paratii.video/tcp/443/wss/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW"
+      ]
+    }
+  });
+  return new Clappr.Player({
     source,
     poster,
     mimeType,
@@ -49,3 +55,4 @@ module.exports = ({ selector, source, poster, mimeType, ipfsHash, ...rest }) =>
     },
     ...rest
   });
+};
