@@ -4,20 +4,21 @@
   "description": "Clappr-based video player for Paratii",
   "main": "build/bundle.js",
   "scripts": {
-    "dev":
-      "yarn run clean && yarn run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors",
-    "build":
-      "yarn run clean && yarn run prep && NODE_ENV=production webpack --progress --colors",
+    "dev": "yarn run clean && yarn run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors",
+    "build": "yarn run clean && yarn run prep && NODE_ENV=production webpack --progress --colors",
     "build:watch": "yarn run build -- --watch",
-    "prep":
-      "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
+    "prep": "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
     "clean": "rm -rf build/",
     "prepublishOnly": "yarn run build",
     "lint": "eslint src test --ext .js --cache",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["eslint --cache", "prettier --write", "git add"]
+    "*.js": [
+      "eslint --cache",
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "Yahya",
   "license": "ISC",
@@ -31,7 +32,11 @@
     "eslint": "^4.13.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "html-loader": "^0.5.1",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
