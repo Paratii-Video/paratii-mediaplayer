@@ -17,6 +17,7 @@ jobs:
             - node_modules
           key: yarn-deps-{{ checksum "yarn.lock" }}
       - run: yarn lint
+      - run: yarn run build
   deploy:
     docker:
       - image: circleci/node:8.9.1
