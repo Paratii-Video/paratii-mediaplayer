@@ -66,7 +66,7 @@ var config = {
       },
       {
         test: /\.svg$/,
-        loader: "url-loader"
+        loader: "raw-loader"
       }
     ]
   }

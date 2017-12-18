@@ -4,20 +4,21 @@
   "description": "Clappr-based video player for Paratii",
   "main": "build/bundle.js",
   "scripts": {
-    "dev":
-      "yarn run clean && yarn run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors --config webpack.demo.js",
-    "build":
-      "yarn run clean && yarn run prep && NODE_ENV=production webpack --progress --colors",
+    "dev": "yarn run clean && yarn run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors --config webpack.demo.js",
+    "build": "yarn run clean && yarn run prep && NODE_ENV=production webpack --progress --colors",
     "build:watch": "yarn run build -- --watch",
-    "prep":
-      "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
+    "prep": "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
     "clean": "rm -rf build/",
     "prepublishOnly": "yarn run build",
     "lint": "eslint src test --ext .js --cache",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["eslint --cache", "prettier --write", "git add"]
+    "*.js": [
+      "eslint --cache",
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "Yahya",
   "license": "ISC",
@@ -51,7 +52,8 @@
     "clappr": "^0.2.78",
     "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#master",
     "ipfs": "github:ya7ya/js-ipfs#paratii/master",
-    "ipfs-bitswap": "^0.17.4"
+    "ipfs-bitswap": "^0.17.4",
+    "raw-loader": "^0.5.1"
   },
   "repository": {
     "type": "git",
