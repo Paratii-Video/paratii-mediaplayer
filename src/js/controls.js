@@ -1,6 +1,7 @@
 const Clappr = require("clappr");
 const MediaControl = require("../html/NewMediaControl.html");
-// const styles = require("styles/controls.scss");
+// Load the styles
+require("styles/controls.scss");
 
 const { Events } = Clappr;
 

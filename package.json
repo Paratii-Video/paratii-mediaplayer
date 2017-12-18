@@ -53,7 +53,7 @@
     "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#master",
     "ipfs": "github:ya7ya/js-ipfs#paratii/master",
     "ipfs-bitswap": "^0.17.4",
-    "raw-loader": "^0.5.1"
+    "svg-url-loader": "^2.3.0"
   },
   "repository": {
     "type": "git",

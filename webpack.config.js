@@ -22,7 +22,7 @@ var config = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         include: [srcDir],
@@ -65,9 +65,16 @@ var config = {
         loader: "html-loader"
       },
       {
-        test: /\.svg$/,
-        loader: "raw-loader"
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {}
+        }
       }
+      // {
+      //   test: /\.svg$/,
+      //   loader: "raw-loader"
+      // }
     ]
   }
 };
