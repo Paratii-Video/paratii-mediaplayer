@@ -1,5 +1,11 @@
 var webpack = require("webpack");
 var path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+  filename: "[name].[contenthash].css",
+  disable: process.env.NODE_ENV === "development"
+});
 
 var srcDir = path.resolve(__dirname, "src");
 var jsDir = srcDir + "/js";
@@ -56,6 +62,9 @@ var config = {
             loader: "css-loader"
           },
           {
+            loader: "resolve-url-loader"
+          },
+          {
             loader: "sass-loader"
           }
         ]
@@ -68,7 +77,10 @@ var config = {
         test: /\.svg/,
         use: {
           loader: "svg-url-loader",
-          options: {}
+          options: {
+            // noquotes: false,
+            // limit: 100000
+          }
         }
       }
       // {
