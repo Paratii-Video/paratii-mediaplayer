@@ -1,11 +1,5 @@
 var webpack = require("webpack");
 var path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css",
-  disable: process.env.NODE_ENV === "development"
-});
 
 var srcDir = path.resolve(__dirname, "src");
 var jsDir = srcDir + "/js";
