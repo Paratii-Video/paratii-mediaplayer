@@ -74,19 +74,9 @@ var config = {
         loader: "html-loader"
       },
       {
-        test: /\.svg/,
-        use: {
-          loader: "svg-url-loader",
-          options: {
-            // noquotes: false,
-            // limit: 100000
-          }
-        }
+        test: /\.svg$/,
+        loader: "svg-url-loader"
       }
-      // {
-      //   test: /\.svg$/,
-      //   loader: "raw-loader"
-      // }
     ]
   }
 };

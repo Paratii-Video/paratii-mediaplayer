@@ -7,7 +7,7 @@
     "dev": "yarn run clean && yarn run prep && webpack-dev-server -d --content-base ./build --hot --progress --colors --config webpack.demo.js",
     "build": "yarn run clean && yarn run prep && NODE_ENV=production webpack --progress --colors",
     "build:watch": "yarn run build -- --watch",
-    "prep": "mkdir build/ && mkdir build/public/ && cp src/index.html build/ && cp -r public/* build/public/",
+    "prep": "mkdir build/ && cp src/index.html build/",
     "clean": "rm -rf build/",
     "prepublishOnly": "yarn run build",
     "lint": "eslint src test --ext .js --cache",
