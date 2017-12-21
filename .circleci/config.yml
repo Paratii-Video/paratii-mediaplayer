@@ -32,7 +32,6 @@ jobs:
           paths:
             - node_modules
           key: yarn-deps-{{ checksum "yarn.lock" }}
-      - run: yarn run build
       - run: npm publish
 workflows:
   version: 2
