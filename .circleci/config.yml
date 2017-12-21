@@ -27,6 +27,7 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/paratii-mediaplayer
+      - run: ls
       - run:
           name: Deploy to npm
           command: yarn publish
