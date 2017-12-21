@@ -29,10 +29,9 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/paratii-mediaplayer
-      - run: ls
       - run:
           name: Deploy to npm
-          command: yarn publish
+          command: npm publish
 workflows:
   version: 2
   build-deploy:
@@ -48,6 +47,6 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              ignore: /.*/
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
