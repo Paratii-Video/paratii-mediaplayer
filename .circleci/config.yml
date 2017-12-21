@@ -39,11 +39,12 @@ workflows:
   build-deploy:
     jobs:
       - build
+          filters:
+            tags:
+              only: /.*/
       - deploy:
           requires:
             - build
           filters:
-            branches:
-              ignore: /.*/
             tags:
-              only: /v[0-9]+(\.[0-9]+)*/
+              only: /^v\d+\.\d+\.\d+$/
