@@ -17,11 +17,15 @@ jobs:
           key: yarn-deps-{{ checksum "yarn.lock" }}
       - run: yarn lint
       - run: yarn run build
+      - persist_to_workspace:
+          root: /tmp/paratii-mediaplayer
   deploy:
     docker:
       - image: circleci/node:8.9.1
     working_directory: /tmp/paratii-mediaplayer
     steps:
+      - attach_workspace:
+          at: /tmp/paratii-mediaplayer
       - run:
           name: Deploy to npm
           command: yarn publish
