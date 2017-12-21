@@ -18,7 +18,8 @@ jobs:
       - run: yarn lint
       - run: yarn run build
       - persist_to_workspace:
-          root: /tmp/paratii-mediaplayer
+          root: /tmp
+          paths: paratii-mediaplayer
   deploy:
     docker:
       - image: circleci/node:8.9.1
