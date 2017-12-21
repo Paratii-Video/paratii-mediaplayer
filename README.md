@@ -55,4 +55,4 @@ _Note: You **will** need to restart `paratii-player` if it was previously runnin
   $ yarn version --new-version <patch|minor|major>
   $ git push --follow-tags
   ```
-  _This will tell `CircleCI` to build and then publish a new version `x.x.x` to the `npm` registry_
+  This will tell `CircleCI` to build and then publish a new version `x.x.x` to the `npm` registry
