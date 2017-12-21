@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: circleci/node:8.9.1
     working_directory: /tmp/paratii-mediaplayer
-
     steps:
       - checkout
       - restore_cache:
@@ -30,7 +29,12 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /.*/
       - deploy:
           requires:
             - build
@@ -39,4 +43,3 @@ workflows:
               only: master
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
-            
