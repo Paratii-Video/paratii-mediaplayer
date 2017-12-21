@@ -48,7 +48,8 @@ _Note: You **will** need to restart `paratii-player` if it was previously runnin
 
 ## Deploying
 
-
-- Create a feature branch off of `master`
-- When ready, merge into `master` and run ```yarn version --new-version <patch|minor|major> && git push --follow-tags```
- - this will have `CircleCI` publish a new version `x.x.x` to the `npm` registry
+- On `master`, run:
+  ```
+  $ yarn version --new-version <patch|minor|major> && git push --follow-tags
+  ```
+  _This will tell `CircleCI` to build and then publish a new version `x.x.x` to the `npm` registry_
