@@ -49,6 +49,7 @@ _Note: You **will** need to restart `paratii-player` if it was previously runnin
 ## Deploying
 
 - On `master`, run:
+
   ```
   $ yarn version --new-version <patch|minor|major> && git push --follow-tags
   ```
