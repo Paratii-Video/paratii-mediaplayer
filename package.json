@@ -1,6 +1,6 @@
 {
   "name": "paratii-mediaplayer",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Clappr-based video player for Paratii",
   "main": "build/bundle.js",
   "scripts": {
@@ -14,7 +14,11 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["eslint --cache", "prettier --write", "git add"]
+    "*.js": [
+      "eslint --cache",
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "Yahya",
   "license": "ISC",
