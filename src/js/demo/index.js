@@ -1,5 +1,7 @@
 const CreatePlayer = require("../index");
 
+require("../../styles/demo/app.scss");
+
 CreatePlayer({
   selector: "#player",
   source:
