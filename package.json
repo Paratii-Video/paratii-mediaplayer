@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "clappr": "^0.2.78",
-    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#master",
-    "ipfs": "github:ya7ya/js-ipfs#paratii/master",
+    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#paratii/v0.27.1",
+    "ipfs": "github:ya7ya/js-ipfs#paratii/v0.27.1",
     "ipfs-bitswap": "^0.17.4",
     "resolve-url-loader": "^2.2.1",
     "svg-url-loader": "^2.3.0"
