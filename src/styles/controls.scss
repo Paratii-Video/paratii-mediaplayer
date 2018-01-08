@@ -223,12 +223,12 @@ $size-player-controls-button-height-mini: 15px;
         position: relative;
         top: 2px;
 
-        mask-image: url('../img/pause-icon.svg');
-        -webkit-mask-image: url('../img/pause-icon.svg');
+        mask-image: url('../assets/img/pause-icon.svg');
+        -webkit-mask-image: url('../assets/img/pause-icon.svg');
 
         &.video-paused {
-          mask-image: url('../img/play-icon.svg');
-          -webkit-mask-image: url('../img/play-icon.svg');
+          mask-image: url('../assets/img/play-icon.svg');
+          -webkit-mask-image: url('../assets/img/play-icon.svg');
         }
       }
 
@@ -238,12 +238,12 @@ $size-player-controls-button-height-mini: 15px;
         top: 1px;
 
         &.drawer-icon {
-          mask-image: url('../img/volume-icon.svg');
-          -webkit-mask-image: url('../img/volume-icon.svg');
+          mask-image: url('../assets/img/volume-icon.svg');
+          -webkit-mask-image: url('../assets/img/volume-icon.svg');
 
           &.muted {
-            mask-image: url('../img/mute-icon.svg');
-            -webkit-mask-image: url('../img/mute-icon.svg');
+            mask-image: url('../assets/img/mute-icon.svg');
+            -webkit-mask-image: url('../assets/img/mute-icon.svg');
           }
         }
 
@@ -313,8 +313,8 @@ $size-player-controls-button-height-mini: 15px;
         float: none;
         position: relative;
         top: 1px;
-        mask-image: url('../img/fullscreen-icon.svg');
-        -webkit-mask-image: url('../img/fullscreen-icon.svg');
+        mask-image: url('../assets/img/fullscreen-icon.svg');
+        -webkit-mask-image: url('../assets/img/fullscreen-icon.svg');
 
       }
     }
