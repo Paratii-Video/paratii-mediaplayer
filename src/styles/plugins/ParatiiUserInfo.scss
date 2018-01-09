@@ -1,0 +1,51 @@
+$prefix: paratii__user-info;
+
+#paratii__user-info--container .#{$prefix} {
+  .#{$prefix}--menu {
+    display: flex;
+    background-color: rgba(black, 0.5);
+    padding: 20px 0;
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    top: -200px;
+    font-weight: bold;
+    border-radius: 7px;
+
+    .#{$prefix}--avatar-wrapper {
+      flex: 0 0 50%;
+      height: 100%;
+
+      .#{$prefix}--avatar {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+      }
+    }
+
+    .#{$prefix}--details {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      color: white;
+
+      .#{$prefix}--name,
+      .#{$prefix}--pti,
+      .#{$prefix}--eth,
+      .#{$prefix}--usd {
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .#{$prefix}--name {
+        flex: 0 0 50%;
+      }
+
+      .#{$prefix}--pti,
+      .#{$prefix}--eth {
+        font-size: 12px;
+        flex: 0 0 16.7%;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ var path = require("path");
 
 var srcDir = path.resolve(__dirname, "src");
 var jsDir = srcDir + "/js";
+var htmlDir = srcDir + "/html";
 var stylesDir = srcDir + "/styles";
 var buildDir = path.resolve(__dirname, "build");
 
@@ -18,7 +19,8 @@ var config = {
   },
   resolve: {
     alias: {
-      styles: stylesDir
+      styles: stylesDir,
+      html: htmlDir
     }
   },
   module: {

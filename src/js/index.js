@@ -12,6 +12,7 @@ module.exports = ({
   poster,
   mimeType,
   ipfsHash,
+  plugins,
   ...rest
 }) => {
   const node = new IPFS({
@@ -28,6 +29,8 @@ module.exports = ({
       ]
     }
   });
+  const corePlugins = plugins.core || [];
+  console.log("plugins: ", plugins);
   return new Clappr.Player({
     source,
     poster,
@@ -35,12 +38,16 @@ module.exports = ({
     parentId: selector,
     height: "100vh",
     width: "100%",
+    hideMediaControl: false,
     mediacontrol: { external: Controls },
     watermark:
       "http://paratii.video/imagens/cropped-logo_colorido_horizontal.png",
     position: "top-right",
     watermarkLink: "http://paratii.video/",
-    plugins: [NoSeekTime],
+    plugins: {
+      ...plugins,
+      core: [NoSeekTime, ...corePlugins]
+    },
     playback: {
       hlsjsConfig: {
         loader: HlsjsIpfsLoader,
