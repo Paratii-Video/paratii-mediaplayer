@@ -5263,6 +5263,7 @@ highlight.js@^9.1.0, highlight.js@^9.8.0:
     aegir "^11.0.2"
     gulp "^3.9.1"
     lodash "^4.17.4"
+    streamspeed "^1.1.0"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -11293,6 +11294,10 @@ streamifier@^0.1.1:
 streamsearch@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-0.1.2.tgz#808b9d0e56fc273d809ba57338e929919a1a9f1a"
+
+streamspeed@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/streamspeed/-/streamspeed-1.1.0.tgz#a2088ae62af68657309b647c4ad2bd2fed4d949a"
 
 strict-uri-encode@^1.0.0:
   version "1.1.0"
