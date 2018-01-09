@@ -14,7 +14,16 @@ $prefix: paratii__user-info;
     font-size: 12px;
     transition: all 250ms ease-in-out;
     transition-delay: 0;
-    overflow: hidden;
+
+    .#{$prefix}--close-button {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
 
     .#{$prefix}--avatar-wrapper {
       flex: 0 0 50%;

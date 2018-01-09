@@ -21,7 +21,10 @@ class ParatiiUserInfoComponent extends React.Component {
       ptiUSDRate: 1
     };
 
+    this.requestClose = false;
+
     this.onButtonClick = this.onButtonClick.bind(this);
+    this.onCloseClick = this.onCloseClick.bind(this);
   }
 
   onButtonClick() {
@@ -53,16 +56,37 @@ class ParatiiUserInfoComponent extends React.Component {
     };
   }
 
+  onCloseClick() {
+    this.requestClose = true;
+    this.setState({
+      infoOpen: false
+    });
+  }
+
+  onExited() {
+    if (this.closed) {
+      this.props.onClose();
+    }
+  }
+
   render() {
     return (
       <div className="paratii__user-info">
         <button onClick={this.onButtonClick}>User Info</button>
-        <Transition in={this.state.infoOpen} timeout={250}>
+        <Transition
+          in={this.state.infoOpen}
+          timeout={250}
+          onExited={this.onExited}
+        >
           {transitionState => (
             <div
               className="paratii__user-info--menu"
               style={this.getMenuStyles()[transitionState]}
             >
+              <button
+                className="paratii__user-info--close-button"
+                onClick={this.onCloseClick}
+              />
               <div className="paratii__user-info--avatar-wrapper">
                 <img
                   className="paratii__user-info--avatar"
@@ -168,13 +192,30 @@ export default class ParatiiUserInfo extends UICorePlugin {
     return true;
   }
 
+  unmount() {
+    const container = this.core.mediaControl.$(
+      "#paratii__user-info--container"
+    )[0];
+    if (container) {
+      ReactDOM.unmountComponentAtNode(container);
+    }
+  }
+
   render() {
     if (this.shouldRender()) {
       this.core.mediaControl.$(".media-control-center-panel").append(this.el);
-      ReactDOM.render(
-        <ParatiiUserInfoComponent {...userInfo} />,
-        this.core.mediaControl.$("#paratii__user-info--container")[0]
-      );
+      const container = this.core.mediaControl.$(
+        "#paratii__user-info--container"
+      )[0];
+      if (container) {
+        ReactDOM.render(
+          <ParatiiUserInfoComponent
+            {...userInfo}
+            onClose={this.unmount.bind(this)}
+          />,
+          this.core.mediaControl.$("#paratii__user-info--container")[0]
+        );
+      }
     }
 
     return this;
