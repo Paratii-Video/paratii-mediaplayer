@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Transition from "react-transition-group/Transition";
 import { Events, UICorePlugin } from "clappr";
 import "styles/plugins/ParatiiUserInfo.scss";
 
@@ -15,7 +16,7 @@ class ParatiiUserInfoComponent extends React.Component {
     super(props);
 
     this.state = {
-      infoOpen: true,
+      infoOpen: false,
       ethUSDRate: 1,
       ptiUSDRate: 1
     };
@@ -43,32 +44,56 @@ class ParatiiUserInfoComponent extends React.Component {
     );
   }
 
+  getMenuStyles() {
+    return {
+      entering: { opacity: 0, transform: "scale(0)" },
+      entered: { opacity: 1 },
+      exiting: { opacity: 1 },
+      exited: { opacity: 0, transform: "scale(0)" }
+    };
+  }
+
   render() {
     return (
       <div className="paratii__user-info">
         <button onClick={this.onButtonClick}>User Info</button>
-        {this.state.infoOpen && (
-          <div className="paratii__user-info--menu">
-            <div className="paratii__user-info--avatar-wrapper">
-              <img
-                className="paratii__user-info--avatar"
-                src={this.props.avatarUrl}
-              />
+        <Transition in={this.state.infoOpen} timeout={250}>
+          {transitionState => (
+            <div
+              className="paratii__user-info--menu"
+              style={this.getMenuStyles()[transitionState]}
+            >
+              <div className="paratii__user-info--avatar-wrapper">
+                <img
+                  className="paratii__user-info--avatar"
+                  src={this.props.avatarUrl}
+                />
+                <a
+                  href="https://portal.paratii.video/"
+                  className="paratii__user-info--link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Edit Profile
+                </a>
+              </div>,
+              <div className="paratii__user-info--details">
+                <div className="paratii__user-info--name">
+                  {this.props.name}
+                </div>
+                <div className="paratii__user-info--pti">
+                  {this.formatBalance(this.props.ptiBalance)} PTI
+                </div>
+                <div className="paratii__user-info--eth">
+                  {this.formatBalance(this.props.ethBalance)} ETH
+                </div>
+                <div className="paratii__user-info--usd">
+                  (${this.getUSDBalance()} USD)
+                </div>
+              </div>
             </div>
-            <div className="paratii__user-info--details">
-              <div className="paratii__user-info--name">{this.props.name}</div>
-              <div className="paratii__user-info--pti">
-                {this.formatBalance(this.props.ptiBalance)} PTI
-              </div>
-              <div className="paratii__user-info--eth">
-                {this.formatBalance(this.props.ethBalance)} ETH
-              </div>
-              <div className="paratii__user-info--usd">
-                (${this.getUSDBalance()} USD)
-              </div>
-            </div>
-          </div>
-        )}
+          )}
+        </Transition>
       </div>
     );
   }

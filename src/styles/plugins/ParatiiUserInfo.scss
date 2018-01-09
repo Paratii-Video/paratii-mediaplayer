@@ -8,18 +8,41 @@ $prefix: paratii__user-info;
     width: 250px;
     height: 150px;
     position: absolute;
-    top: -200px;
+    top: -160px;
     font-weight: bold;
     border-radius: 7px;
+    font-size: 12px;
+    transition: all 250ms ease-in-out;
+    transition-delay: 0;
+    overflow: hidden;
 
     .#{$prefix}--avatar-wrapper {
       flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       height: 100%;
+      position: relative;
 
       .#{$prefix}--avatar {
+        flex: 0 0 65px;
         width: 65px;
         height: 65px;
         border-radius: 50%;
+      }
+
+      .#{$prefix}--link {
+        flex: 0 0 25%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+
+        &:link,
+        &:visited,
+        &:active {
+          text-decoration: none;
+          color: white;
+        }
       }
     }
 
@@ -34,7 +57,6 @@ $prefix: paratii__user-info;
       .#{$prefix}--eth,
       .#{$prefix}--usd {
         text-align: left;
-        font-size: 12px;
       }
 
       .#{$prefix}--name {
