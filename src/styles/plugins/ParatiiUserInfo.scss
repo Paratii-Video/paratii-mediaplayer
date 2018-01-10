@@ -1,6 +1,27 @@
+@import '../base/settings.scss';
+
 $prefix: paratii__user-info;
 
 #paratii__user-info--container .#{$prefix} {
+
+  position: relative;
+  top: 2px;
+
+  .#{$prefix}--button {
+    width: 16px;
+    height: 16px;
+    mask-image: url('../../assets/img/user-icon.svg');
+    -webkit-mask-image: url('../../assets/img/user-icon.svg');
+
+/*    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;*/
+
+    &--active {
+      background-color: $color-purple;
+    }
+  }
+
   .#{$prefix}--menu {
     display: flex;
     background-color: rgba(black, 0.5);

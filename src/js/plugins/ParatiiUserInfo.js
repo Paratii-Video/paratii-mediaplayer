@@ -72,7 +72,12 @@ class ParatiiUserInfoComponent extends React.Component {
   render() {
     return (
       <div className="paratii__user-info">
-        <button onClick={this.onButtonClick}>User Info</button>
+        <button
+          className={`media-control-button paratii__user-info--button${
+            this.state.infoOpen ? " paratii__user-info--button--active" : ""
+          }`}
+          onClick={this.onButtonClick}
+        />
         <Transition
           in={this.state.infoOpen}
           timeout={250}
