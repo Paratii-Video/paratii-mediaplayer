@@ -2,9 +2,11 @@
 // @import './base/helpers.less';
 // @import './base/mixins.less';
 // @import './base/reset.less';
-@import './base/settings.scss';
 // @import './base/structure.less';
 // @import './base/typography.less';
+
+@import "./base/settings.scss";
+@import "./base/mixins.scss";
 
 $size-player-controls-button-height: 15px;
 $size-player-controls-button-height-mini: 15px;
@@ -26,7 +28,7 @@ $size-player-controls-button-height-mini: 15px;
     }
     .media-control-layer[data-controls] {
       bottom: -50px;
-      .bar-container[data-seekbar]{
+      .bar-container[data-seekbar] {
         .bar-scrubber[data-seekbar] {
           opacity: 0;
         }
@@ -71,18 +73,13 @@ $size-player-controls-button-height-mini: 15px;
       height: 100%;
     }
 
-    button.media-control-button, .drawer-icon {
+    button.media-control-button,
+    .drawer-icon {
       // &:extend(.hover-opacity all);
       width: 32px;
       height: 32px;
       cursor: pointer;
-      background-repeat: no-repeat;
-      background-position: center center;
       background-color: $color-grey;
-      mask-repeat: no-repeat;
-      mask-position: center;
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-position: center;
 
       &:hover {
         background-color: $color-white;
@@ -125,7 +122,6 @@ $size-player-controls-button-height-mini: 15px;
       }
     }
 
-
     .media-control-left-panel[data-media-control] {
       display: none;
     }
@@ -156,7 +152,7 @@ $size-player-controls-button-height-mini: 15px;
         cursor: pointer;
 
         .bar-background[data-seekbar] {
-          background: rgba(255, 255, 255, .3);
+          background: rgba(255, 255, 255, 0.3);
           height: 5px;
           top: 0px;
           border-radius: 10px;
@@ -164,7 +160,7 @@ $size-player-controls-button-height-mini: 15px;
           position: relative;
 
           .bar-fill-1[data-seekbar] {
-            background: rgba(255, 255, 255, .3);
+            background: rgba(255, 255, 255, 0.3);
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             height: 100%;
@@ -173,7 +169,7 @@ $size-player-controls-button-height-mini: 15px;
 
           .bar-fill-2[data-seekbar] {
             position: absolute;
-            background-color: rgba(255, 255, 255, .6);;
+            background-color: rgba(255, 255, 255, 0.6);
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
             transition: all 0.1s ease-out;
@@ -186,7 +182,7 @@ $size-player-controls-button-height-mini: 15px;
             position: absolute;
             width: 5px;
             height: 7px;
-            background-color: rgba(255,255,255,0.5);
+            background-color: rgba(255, 255, 255, 0.5);
             transition: opacity 0.1s ease;
             opacity: 0;
           }
@@ -203,7 +199,7 @@ $size-player-controls-button-height-mini: 15px;
         .bar-scrubber[data-seekbar] {
           background: $color-white;
           border-radius: 50%;
-          content: '';
+          content: "";
           position: absolute;
           top: 12px;
           height: 15px;
@@ -222,13 +218,10 @@ $size-player-controls-button-height-mini: 15px;
         float: none;
         position: relative;
         top: 2px;
-
-        mask-image: url('../assets/img/pause-icon.svg');
-        -webkit-mask-image: url('../assets/img/pause-icon.svg');
+        @include mask-image("../assets/img/pause-icon.svg");
 
         &.video-paused {
-          mask-image: url('../assets/img/play-icon.svg');
-          -webkit-mask-image: url('../assets/img/play-icon.svg');
+          @include mask-image("../assets/img/play-icon.svg");
         }
       }
 
@@ -238,12 +231,10 @@ $size-player-controls-button-height-mini: 15px;
         top: 1px;
 
         &.drawer-icon {
-          mask-image: url('../assets/img/volume-icon.svg');
-          -webkit-mask-image: url('../assets/img/volume-icon.svg');
+          @include mask-image("../assets/img/volume-icon.svg");
 
           &.muted {
-            mask-image: url('../assets/img/mute-icon.svg');
-            -webkit-mask-image: url('../assets/img/mute-icon.svg');
+            @include mask-image("../assets/img/mute-icon.svg");
           }
         }
 
@@ -259,7 +250,7 @@ $size-player-controls-button-height-mini: 15px;
           top: 0;
           margin-right: 0;
           width: 42px;
-          transition: width .2s ease-out;
+          transition: width 0.2s ease-out;
 
           .segmented-bar-element {
             box-shadow: $color-grey 2px 0 0;
@@ -269,7 +260,7 @@ $size-player-controls-button-height-mini: 15px;
             height: 12px;
             opacity: 0.5;
             box-shadow: inset 2px 0 0 white;
-            transition: transform .2s ease-out;
+            transition: transform 0.2s ease-out;
 
             &.fill {
               box-shadow: inset 2px 0 0 #fff;
@@ -313,9 +304,7 @@ $size-player-controls-button-height-mini: 15px;
         float: none;
         position: relative;
         top: 1px;
-        mask-image: url('../assets/img/fullscreen-icon.svg');
-        -webkit-mask-image: url('../assets/img/fullscreen-icon.svg');
-
+        @include mask-image("../assets/img/fullscreen-icon.svg");
       }
     }
   }

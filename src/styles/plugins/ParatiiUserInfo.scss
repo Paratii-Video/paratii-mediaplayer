@@ -1,4 +1,5 @@
 @import "../base/settings.scss";
+@import "../base/mixins.scss";
 
 $prefix: paratii__user-info;
 
@@ -9,8 +10,7 @@ $prefix: paratii__user-info;
   .#{$prefix}--button {
     width: 16px;
     height: 16px;
-    mask-image: url("../../assets/img/user-icon.svg");
-    -webkit-mask-image: url("../../assets/img/user-icon.svg");
+    @include mask-image("../../assets/img/user-icon.svg");
 
     &--active {
       background-color: $color-purple;
@@ -41,12 +41,7 @@ $prefix: paratii__user-info;
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      mask-repeat: no-repeat;
-      -webkit-mask-repeat: no-repeat;
-      mask-position: center center;
-      -webkit-mask-position: center center;
-      mask-image: url("../../assets/img/close-icon.svg");
-      -webkit-mask-image: url("../../assets/img/close-icon.svg");
+      @include mask-image("../../assets/img/close-icon.svg");
     }
 
     .#{$prefix}--avatar-wrapper {
@@ -70,12 +65,7 @@ $prefix: paratii__user-info;
         position: absolute;
         bottom: 0;
         background-color: $color-white;
-        mask-repeat: no-repeat;
-        -webkit-mask-repeat: no-repeat;
-        mask-position: center center;
-        -webkit-mask-position: center center;
-        mask-image: url("../../assets/img/dots-icon.svg");
-        -webkit-mask-image: url("../../assets/img/dots-icon.svg");
+        @include mask-image("../../assets/img/dots-icon.svg");
 
         &:link,
         &:visited,
