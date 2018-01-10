@@ -102,9 +102,7 @@ class ParatiiUserInfoComponent extends React.Component {
                   className="paratii__user-info--link"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  Edit Profile
-                </a>
+                />
               </div>,
               <div className="paratii__user-info--details">
                 <div className="paratii__user-info--name">
