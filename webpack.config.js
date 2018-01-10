@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
+var OpenBrowserPlugin = require("open-browser-webpack-plugin");
 
 var srcDir = path.resolve(__dirname, "src");
 var jsDir = srcDir + "/js";
@@ -8,6 +9,7 @@ var stylesDir = srcDir + "/styles";
 var buildDir = path.resolve(__dirname, "build");
 
 var prod = process.env.NODE_ENV === "production";
+var dev = process.env.NODE_ENV === "dev";
 
 var config = {
   entry: jsDir + "/index.js",
@@ -74,7 +76,14 @@ var config = {
         loader: "svg-url-loader"
       }
     ]
-  }
+  },
+  plugins: dev
+    ? [
+        new OpenBrowserPlugin({
+          url: "http://localhost:8080"
+        })
+      ]
+    : []
 };
 
 module.exports = config;
