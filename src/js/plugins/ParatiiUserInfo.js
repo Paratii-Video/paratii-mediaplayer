@@ -40,13 +40,6 @@ class ParatiiUserInfoComponent extends React.Component {
     });
   }
 
-  getUSDBalance() {
-    return this.formatBalance(
-      this.props.ethBalance * this.state.ethUSDRate +
-        this.props.ptiBalance * this.state.ptiUSDRate
-    );
-  }
-
   getMenuStyles() {
     return {
       entering: { opacity: 0, transform: "scale(0)" },
@@ -113,9 +106,6 @@ class ParatiiUserInfoComponent extends React.Component {
                 </div>
                 <div className="paratii__user-info--eth">
                   {this.formatBalance(this.props.ethBalance)} ETH
-                </div>
-                <div className="paratii__user-info--usd">
-                  (${this.getUSDBalance()} USD)
                 </div>
               </div>
             </div>

@@ -19,7 +19,7 @@ $prefix: paratii__user-info;
 
   .#{$prefix}--menu {
     display: flex;
-    background-color: rgba(black, 0.5);
+    background-color: rgba($color-black, 0.5);
     padding: 20px 0;
     width: 250px;
     height: 150px;
@@ -32,13 +32,21 @@ $prefix: paratii__user-info;
     transition-delay: 0;
 
     .#{$prefix}--close-button {
+      cursor: pointer;
       position: absolute;
+      outline: none;
       top: -8px;
       right: -8px;
       background: $color-white;
       width: 20px;
       height: 20px;
       border-radius: 50%;
+      mask-repeat: no-repeat;
+      -webkit-mask-repeat: no-repeat;
+      mask-position: center center;
+      -webkit-mask-position: center center;
+      mask-image: url("../../assets/img/close-icon.svg");
+      -webkit-mask-image: url("../../assets/img/close-icon.svg");
     }
 
     .#{$prefix}--avatar-wrapper {
@@ -81,6 +89,7 @@ $prefix: paratii__user-info;
     .#{$prefix}--details {
       flex: 0 0 50%;
       display: flex;
+      justify-content: flex-end;
       flex-direction: column;
       color: $color-white;
 
