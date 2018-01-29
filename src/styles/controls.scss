@@ -168,21 +168,21 @@ $size-player-controls-button-height-mini: 15px;
         height: 15px;
 
         .bar-background[data-seekbar] {
-          background: rgba(255, 255, 255, 0.3);
+          background: $color-grey;
           height: $bar-height;
           top: 0px;
           width: 100%;
           position: relative;
 
           .bar-fill-1[data-seekbar] {
-            background: rgba(255, 255, 255, 0.3);
+            background: $color-white;
             height: $bar-height;
             transition: all 0.1s ease-out;
           }
 
           .bar-fill-2[data-seekbar] {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.6);
+            background: linear-gradient(to right,$color-purple-dark, $color-purple);
             transition: all 0.1s ease-out;
             top: 0;
             height: 100%;
