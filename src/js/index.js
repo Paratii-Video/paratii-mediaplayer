@@ -13,24 +13,27 @@ module.exports = ({
   mimeType,
   ipfsHash,
   plugins,
+  node,
   ...rest
 }) => {
-  const node = new IPFS({
-    bitswap: {
-      maxMessageSize: 128 * 1024
-    },
-    repo: "paratii-" + String(Math.random() + Date.now()).replace(/\./g, ""),
-    config: {
-      Addresses: {
-        Swarm: ["/dns4/star.paratii.video/tcp/443/wss/p2p-webrtc-star"]
+  const ipfsNode =
+    node ||
+    new IPFS({
+      bitswap: {
+        maxMessageSize: 128 * 1024
       },
-      Bootstrap: [
-        "/dns4/bootstrap.paratii.video/tcp/443/wss/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW"
-      ]
-    }
-  });
+      repo: "paratii-" + String(Math.random() + Date.now()).replace(/\./g, ""),
+      config: {
+        Addresses: {
+          Swarm: ["/dns4/star.paratii.video/tcp/443/wss/p2p-webrtc-star"]
+        },
+        Bootstrap: [
+          "/dns4/bootstrap.paratii.video/tcp/443/wss/ipfs/QmeUmy6UtuEs91TH6bKnfuU1Yvp63CkZJWm624MjBEBazW"
+        ]
+      }
+    });
   const corePlugins = plugins.core || [];
-  console.log("plugins: ", plugins);
+
   return new Clappr.Player({
     source,
     poster,
@@ -51,7 +54,7 @@ module.exports = ({
     playback: {
       hlsjsConfig: {
         loader: HlsjsIpfsLoader,
-        ipfs: node,
+        ipfs: ipfsNode,
         ipfsHash,
         enableWorker: true,
         startLevel: 0,
