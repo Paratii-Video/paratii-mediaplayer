@@ -231,12 +231,17 @@ $size-player-controls-button-height-mini: 15px;
       }
 
       [data-playpause] {
+        background-color: $color-purple;
         order: 0;
         float: none;
         @include mask-image("../assets/img/pause-icon.svg");
 
         &.video-paused {
           @include mask-image("../assets/img/play-icon.svg");
+        }
+
+        &:hover {
+          background-color: lighten($color-purple, 10%);
         }
       }
 
