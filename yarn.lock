@@ -5250,6 +5250,7 @@ highlight.js@^9.1.0, highlight.js@^9.8.0:
     aegir "^11.0.2"
     gulp "^3.9.1"
     lodash "^4.17.4"
+    streamspeed "^1.1.0"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
