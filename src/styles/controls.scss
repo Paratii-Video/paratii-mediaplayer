@@ -59,12 +59,13 @@ $size-player-controls-button-height-mini: 15px;
     position: absolute;
     bottom: 7px;
     width: 100%;
-    height: 32px;
+    height: 50px;
     font-size: 0;
     vertical-align: middle;
     pointer-events: auto;
     transition: bottom 0.4s ease-out;
     display: flex;
+    flex-direction: column;
 
     button.media-control-button {
       border: 0;
@@ -122,16 +123,33 @@ $size-player-controls-button-height-mini: 15px;
       }
     }
 
-    .media-control-left-panel[data-media-control] {
-      display: none;
+    $bar-height: 2.5px;
+
+    .media-control-top-panel[data-media-control] {
+      order: 0;
+      width: 100%;
+      flex: 0 0 15px;
     }
 
-    .media-control-right-panel[data-media-control] {
-      display: none;
+    .media-control-bottom-panel {
+      order: 1;
+      display: flex;
+      width: 100%;
+      flex: 1 1 0;
+      position: relative;
+      top: -4px;
+
+      .media-control-left-panel[data-media-control] {
+        flex: 0 0 50%;
+      }
+
+      .media-control-right-panel[data-media-control] {
+        flex: 0 0 50%;
+        justify-content: flex-end;
+      }
     }
 
-    .media-control-center-panel[data-media-control] {
-      position: static;
+    [data-media-control] {
       display: flex;
       align-items: center;
       width: 100%;
@@ -143,45 +161,38 @@ $size-player-controls-button-height-mini: 15px;
       }
 
       .bar-container[data-seekbar] {
-        position: relative;
-        top: 1.5px;
         display: flex;
         align-items: center;
         width: 100%;
-        height: 25px;
         cursor: pointer;
+        height: 15px;
 
         .bar-background[data-seekbar] {
           background: rgba(255, 255, 255, 0.3);
-          height: 5px;
+          height: $bar-height;
           top: 0px;
-          border-radius: 10px;
           width: 100%;
           position: relative;
 
           .bar-fill-1[data-seekbar] {
             background: rgba(255, 255, 255, 0.3);
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            height: 100%;
+            height: $bar-height;
             transition: all 0.1s ease-out;
           }
 
           .bar-fill-2[data-seekbar] {
             position: absolute;
             background-color: rgba(255, 255, 255, 0.6);
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
             transition: all 0.1s ease-out;
             top: 0;
             height: 100%;
           }
 
           .bar-hover[data-seekbar] {
-            top: -1px;
+            top: -3px;
             position: absolute;
-            width: 5px;
-            height: 7px;
+            width: 4px;
+            height: 9px;
             background-color: rgba(255, 255, 255, 0.5);
             transition: opacity 0.1s ease;
             opacity: 0;
@@ -201,14 +212,20 @@ $size-player-controls-button-height-mini: 15px;
           border-radius: 50%;
           content: "";
           position: absolute;
-          top: 12px;
-          height: 15px;
-          width: 15px;
-          transform: translateY(-50%);
+          height: 7px;
+          width: 7px;
           transition: all 0.1s ease-out;
 
-          .bar-scrubber-icon[data-seekbar] {
-            display: none;
+          &:before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background: $color-grey;
+            opacity: 0.5;
           }
         }
       }
@@ -216,8 +233,6 @@ $size-player-controls-button-height-mini: 15px;
       [data-playpause] {
         order: 0;
         float: none;
-        position: relative;
-        top: 2px;
         @include mask-image("../assets/img/pause-icon.svg");
 
         &.video-paused {
@@ -227,8 +242,6 @@ $size-player-controls-button-height-mini: 15px;
 
       [data-volume] {
         order: 1;
-        position: relative;
-        top: 1px;
 
         &.drawer-icon {
           @include mask-image("../assets/img/volume-icon.svg");
@@ -241,8 +254,6 @@ $size-player-controls-button-height-mini: 15px;
         &.drawer-container {
           display: flex;
           align-items: center;
-          position: relative;
-          top: 1px;
           margin: 0 6px;
         }
         &.bar-container {
@@ -282,28 +293,27 @@ $size-player-controls-button-height-mini: 15px;
         order: 2;
       }
 
+      [data-duration],
       [data-position] {
-        display: none;
-      }
-
-      [data-duration] {
-        &:before {
-          display: none;
-        }
-        order: 3;
-        margin-left: 10px;
-        position: relative;
-        top: 1px;
         font-size: 14px;
         color: $color-white;
         font-weight: 600;
       }
 
+      [data-position] {
+        order: 1
+      }
+
+      [data-duration] {
+        &:before {
+          content: "/";
+        }
+        order: 2;
+      }
+
       [data-fullscreen] {
         order: 4;
         float: none;
-        position: relative;
-        top: 1px;
         @include mask-image("../assets/img/fullscreen-icon.svg");
       }
     }
