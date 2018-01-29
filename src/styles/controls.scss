@@ -212,8 +212,9 @@ $size-player-controls-button-height-mini: 15px;
           border-radius: 50%;
           content: "";
           position: absolute;
-          height: 7px;
-          width: 7px;
+          height: 10px;
+          width: 10px;
+          top: 2px;
           transition: all 0.1s ease-out;
 
           &:before {
@@ -221,8 +222,8 @@ $size-player-controls-button-height-mini: 15px;
             position: absolute;
             top: -4px;
             left: -4px;
-            height: 15px;
-            width: 15px;
+            height: 18px;
+            width: 18px;
             border-radius: 50%;
             background: $color-grey;
             opacity: 0.5;
@@ -243,7 +244,7 @@ $size-player-controls-button-height-mini: 15px;
         }
 
         &:hover {
-          background-color: lighten($color-purple, 10%);
+          background-color: lighten($color-purple, 5%);
         }
       }
 
