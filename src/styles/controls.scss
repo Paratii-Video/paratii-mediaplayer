@@ -168,21 +168,21 @@ $size-player-controls-button-height-mini: 15px;
         height: 15px;
 
         .bar-background[data-seekbar] {
-          background: rgba(255, 255, 255, 0.3);
+          background: $color-grey;
           height: $bar-height;
           top: 0px;
           width: 100%;
           position: relative;
 
           .bar-fill-1[data-seekbar] {
-            background: rgba(255, 255, 255, 0.3);
+            background: $color-white;
             height: $bar-height;
             transition: all 0.1s ease-out;
           }
 
           .bar-fill-2[data-seekbar] {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.6);
+            background: linear-gradient(to right,$color-purple-dark, $color-purple);
             transition: all 0.1s ease-out;
             top: 0;
             height: 100%;
@@ -212,8 +212,9 @@ $size-player-controls-button-height-mini: 15px;
           border-radius: 50%;
           content: "";
           position: absolute;
-          height: 7px;
-          width: 7px;
+          height: 10px;
+          width: 10px;
+          top: 2px;
           transition: all 0.1s ease-out;
 
           &:before {
@@ -221,8 +222,8 @@ $size-player-controls-button-height-mini: 15px;
             position: absolute;
             top: -4px;
             left: -4px;
-            height: 15px;
-            width: 15px;
+            height: 18px;
+            width: 18px;
             border-radius: 50%;
             background: $color-grey;
             opacity: 0.5;
@@ -231,12 +232,19 @@ $size-player-controls-button-height-mini: 15px;
       }
 
       [data-playpause] {
+        background-color: $color-purple;
         order: 0;
         float: none;
         @include mask-image("../assets/img/pause-icon.svg");
 
         &.video-paused {
           @include mask-image("../assets/img/play-icon.svg");
+          mask-size: 20px 20px;
+          -webkit-mask-size: 20px 20px;
+        }
+
+        &:hover {
+          background-color: lighten($color-purple, 5%);
         }
       }
 
