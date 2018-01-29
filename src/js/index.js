@@ -32,6 +32,7 @@ module.exports = ({
         ]
       }
     });
+  plugins = plugins || [];
   const corePlugins = plugins.core || [];
 
   return new Clappr.Player({
