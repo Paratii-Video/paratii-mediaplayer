@@ -8,7 +8,6 @@
           <div class="bar-hover" data-<%= name %>></div>
         </div>
         <div class="bar-scrubber" data-<%= name %>>
-          <div class="bar-scrubber-icon" data-<%= name %>></div>
         </div>
       </div>
   <%  }; %>
@@ -52,19 +51,21 @@
           }
         });
       }; %>
-  <% if (false) { %>
-  <div class="media-control-left-panel" data-media-control>
-  </div>
-  <% } %>
-  <% if (settings.left && settings.left.length) { %>
-  <div class="media-control-center-panel" data-media-control>
-    <% render(settings.left); %>
+  <% if (settings.default && settings.default.length) { %>
+  <div class="media-control-top-panel" data-media-control>
     <% render(settings.default); %>
-    <% render(settings.right); %>
   </div>
   <% } %>
-  <% if (false) { %>
-  <div class="media-control-right-panel" data-media-control>
+  <div class="media-control-bottom-panel">
+    <% if (settings.left && settings.left.length) { %>
+    <div class="media-control-left-panel" data-media-control>
+      <% render(settings.left); %>
+    </div>
+    <% } %>
+    <% if (settings.right && settings.right.length) { %>
+    <div class="media-control-right-panel" data-media-control>
+      <% render(settings.right); %>
+    </div>
+    <% } %>
   </div>
-  <% } %>
 </div>
