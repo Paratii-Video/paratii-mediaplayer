@@ -196,7 +196,7 @@ export default class ParatiiUserInfo extends UICorePlugin {
 
   render() {
     if (this.shouldRender()) {
-      this.core.mediaControl.$(".media-control-center-panel").append(this.el);
+      this.core.mediaControl.$(".media-control-left-panel").append(this.el);
       const container = this.core.mediaControl.$(
         "#paratii__user-info--container"
       )[0];

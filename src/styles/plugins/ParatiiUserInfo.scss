@@ -4,8 +4,7 @@
 $prefix: paratii__user-info;
 
 #paratii__user-info--container .#{$prefix} {
-  position: relative;
-  top: 2px;
+  margin-right: 10px;
 
   .#{$prefix}--button {
     width: 16px;
