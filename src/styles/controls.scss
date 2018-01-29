@@ -238,6 +238,8 @@ $size-player-controls-button-height-mini: 15px;
 
         &.video-paused {
           @include mask-image("../assets/img/play-icon.svg");
+          mask-size: 20px 20px;
+          -webkit-mask-size: 20px 20px;
         }
 
         &:hover {
