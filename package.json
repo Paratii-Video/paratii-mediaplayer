@@ -1,6 +1,6 @@
 {
   "name": "paratii-mediaplayer",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Clappr-based video player for Paratii",
   "main": "build/bundle.js",
   "scripts": {
