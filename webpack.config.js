@@ -83,7 +83,10 @@ var config = {
           url: "http://localhost:8080"
         })
       ]
-    : []
+    : [],
+  externals: {
+    clappr: "clappr"
+  }
 };
 
 module.exports = config;
