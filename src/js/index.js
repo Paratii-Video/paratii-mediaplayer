@@ -44,8 +44,6 @@ module.exports = ({
     width: "100%",
     hideMediaControl: false,
     mediacontrol: { external: Controls },
-    watermark:
-      "http://paratii.video/imagens/cropped-logo_colorido_horizontal.png",
     position: "top-right",
     watermarkLink: "http://paratii.video/",
     plugins: {
