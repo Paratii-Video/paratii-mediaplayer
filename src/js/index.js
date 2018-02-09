@@ -56,7 +56,6 @@ module.exports = ({
         ipfs: ipfsNode,
         ipfsHash,
         enableWorker: true,
-        // startLevel: 0,
         autoLevelEnabled: true,
         autoStartLoad: true,
         maxLoadingDelay: 2,
