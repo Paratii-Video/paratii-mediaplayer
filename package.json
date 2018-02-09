@@ -56,7 +56,7 @@
     "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
-    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#paratii/v0.27.1",
+    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#bd890b9e78f2c273fcb1dc4e1d43ad0afc69558c",
     "ipfs": "github:ya7ya/js-ipfs#paratii/v0.27.6",
     "ipfs-bitswap": "^0.17.4",
     "resolve-url-loader": "^2.2.1",

@@ -4,8 +4,9 @@ require("../../styles/demo/app.scss");
 
 CreatePlayer({
   selector: "#player",
-  source: "assets/video/ParatiiDemo.mp4",
-  ipfsHash: "Qmcw1YXdtmik4KsELVjVW25T5F9EZRVYefATXhbWDYK19t",
+  source:
+    "https://gateway.paratii.video/ipfs/QmTUsVKyvPqH1UE8GodoL97bcXBAiaqDjYa2bY9Yx7igL1/master.m3u8",
+  ipfsHash: "QmTUsVKyvPqH1UE8GodoL97bcXBAiaqDjYa2bY9Yx7igL1",
   plugins: {
     core: []
   }
