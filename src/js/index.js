@@ -52,14 +52,14 @@ module.exports = ({
     },
     playback: {
       hlsjsConfig: {
-        loader: HlsjsIpfsLoader,
+        fLoader: HlsjsIpfsLoader,
         ipfs: ipfsNode,
         ipfsHash,
         enableWorker: true,
-        startLevel: 0,
-        autoLevelEnabled: false,
+        autoLevelEnabled: true,
         autoStartLoad: true,
-        maxLoadingDelay: 2
+        maxLoadingDelay: 2,
+        maxStarvationDelay: 2
       }
     },
     ...rest
