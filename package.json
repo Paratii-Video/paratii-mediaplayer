@@ -15,8 +15,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --cache",
       "prettier --write",
+      "eslint --cache",
       "git add"
     ]
   },
