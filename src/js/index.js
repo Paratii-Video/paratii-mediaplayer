@@ -42,7 +42,6 @@ module.exports = ({
     parentId: selector,
     height: "100vh",
     width: "100%",
-    hideMediaControl: false,
     mediacontrol: { external: Controls },
     position: "top-right",
     watermarkLink: "http://paratii.video/",
