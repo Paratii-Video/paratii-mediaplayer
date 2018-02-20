@@ -86,15 +86,7 @@ var config = {
           url: "http://localhost:8080"
         })
       ]
-    : [
-        new UglifyJsPlugin({
-          sourceMap: false,
-          uglifyOptions: {
-            ecma: 6
-          }
-        }),
-        new WebpackBundleSizeAnalyzerPlugin("./plain-report.txt")
-      ],
+    : [],
   externals: {
     clappr: "clappr",
     "hlsjs-ipfs-loader": "hlsjs-ipfs-loader",
