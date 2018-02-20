@@ -3,8 +3,6 @@
 const Clappr = require("clappr");
 const HlsjsIpfsLoader = require("hlsjs-ipfs-loader");
 const IPFS = require("ipfs");
-const Controls = require("./controls");
-const NoSeekTime = require("./plugins/NoSeekTime");
 
 module.exports = ({
   selector,
@@ -12,7 +10,6 @@ module.exports = ({
   poster,
   mimeType,
   ipfsHash,
-  plugins,
   node,
   ...rest
 }) => {
@@ -32,8 +29,6 @@ module.exports = ({
         ]
       }
     });
-  plugins = plugins || [];
-  const corePlugins = plugins.core || [];
 
   return new Clappr.Player({
     source,
@@ -42,13 +37,9 @@ module.exports = ({
     parentId: selector,
     height: "100vh",
     width: "100%",
-    mediacontrol: { external: Controls },
+    chromeless: true,
     position: "top-right",
     watermarkLink: "http://paratii.video/",
-    plugins: {
-      ...plugins,
-      core: [NoSeekTime, ...corePlugins]
-    },
     playback: {
       hlsjsConfig: {
         fLoader: HlsjsIpfsLoader,
