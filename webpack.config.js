@@ -1,9 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
 var OpenBrowserPlugin = require("open-browser-webpack-plugin");
-var WebpackBundleSizeAnalyzerPlugin = require("webpack-bundle-size-analyzer")
-  .WebpackBundleSizeAnalyzerPlugin;
-var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 var srcDir = path.resolve(__dirname, "src");
 var jsDir = srcDir + "/js";
