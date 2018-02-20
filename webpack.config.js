@@ -1,6 +1,9 @@
 var webpack = require("webpack");
 var path = require("path");
 var OpenBrowserPlugin = require("open-browser-webpack-plugin");
+var WebpackBundleSizeAnalyzerPlugin = require("webpack-bundle-size-analyzer")
+  .WebpackBundleSizeAnalyzerPlugin;
+var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 var srcDir = path.resolve(__dirname, "src");
 var jsDir = srcDir + "/js";
@@ -83,9 +86,20 @@ var config = {
           url: "http://localhost:8080"
         })
       ]
-    : [],
+    : [
+        new UglifyJsPlugin({
+          sourceMap: false,
+          uglifyOptions: {
+            ecma: 6
+          }
+        }),
+        new WebpackBundleSizeAnalyzerPlugin("./plain-report.txt")
+      ],
   externals: {
-    clappr: "clappr"
+    clappr: "clappr",
+    "hlsjs-ipfs-loader": "hlsjs-ipfs-loader",
+    ipfs: "ipfs",
+    "ipfs-bitswap": "ipfs-bitswap"
   }
 };
 
