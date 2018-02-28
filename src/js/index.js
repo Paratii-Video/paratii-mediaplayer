@@ -35,7 +35,6 @@ module.exports = ({
     poster,
     mimeType,
     parentId: selector,
-    height: "100vh",
     width: "100%",
     chromeless: true,
     position: "top-right",
