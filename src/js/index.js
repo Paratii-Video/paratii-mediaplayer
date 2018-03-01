@@ -36,6 +36,7 @@ module.exports = ({
     mimeType,
     parentId: selector,
     width: "100%",
+    height: "100%",
     chromeless: true,
     position: "top-right",
     watermarkLink: "http://paratii.video/",
