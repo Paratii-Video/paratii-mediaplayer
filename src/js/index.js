@@ -1,6 +1,6 @@
 "use strict";
 
-const Clappr = require("clappr");
+const Clappr = require("clappr/dist/clappr.min.js");
 const HlsjsIpfsLoader = require("hlsjs-ipfs-loader");
 const IPFS = require("ipfs");
 
