@@ -85,7 +85,7 @@ var config = {
       ]
     : [],
   externals: {
-    clappr: "clappr",
+    clappr: "clappr/dist/clappr.min.js",
     "hlsjs-ipfs-loader": "hlsjs-ipfs-loader",
     ipfs: "ipfs",
     "ipfs-bitswap": "ipfs-bitswap"
