@@ -30,7 +30,7 @@ module.exports = ({
       }
     });
 
-  return new Clappr.Player({
+  const player = Clappr.Player({
     source,
     poster,
     mimeType,
@@ -52,7 +52,10 @@ module.exports = ({
         maxStarvationDelay: 2
       }
     },
-    clappr: Clappr,
     ...rest
   });
+
+  player.clappr = Clappr;
+
+  return player;
 };
