@@ -68,7 +68,7 @@
   "homepage": "https://github.com/Paratii-Video/paratii-mediaplayer#readme",
   "peerDependencies": {
     "clappr": "^0.2.78",
-    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#bd890b9e78f2c273fcb1dc4e1d43ad0afc69558c",
+    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#ab099655e34fbedf689489bb6d299efc418e546e",
     "ipfs": "github:Paratii-Video/js-ipfs#paratii/v0.28.2",
     "ipfs-bitswap": "^0.19.0",
     "react": "^16.2.0",

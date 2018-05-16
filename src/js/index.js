@@ -52,6 +52,7 @@ module.exports = ({
         maxStarvationDelay: 2
       }
     },
+    clappr: Clappr,
     ...rest
   });
 };
