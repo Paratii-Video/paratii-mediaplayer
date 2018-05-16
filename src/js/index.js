@@ -30,7 +30,7 @@ module.exports = ({
       }
     });
 
-  const player = Clappr.Player({
+  const player = new Clappr.Player({
     source,
     poster,
     mimeType,
