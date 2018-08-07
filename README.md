@@ -1,11 +1,13 @@
-# paratii-mediaplayer
-
+<img src="https://i.imgur.com/CmTafs7.png" width="900">
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard) <img src="https://github.com/Paratii-Video/paratiisite/blob/master/rebrand/src/svgs/paratii-logo.svg" width="200">
 
 
-**WORK IN PROGRESS**
+🚨 This is software in active development, so you will likely find bugs. Especially if reading on an iPhone. We ❤️ people who point them out to us on Telegram or via a Github issue.
 
+## Last release announcement
+
+- [**Paratii Player v0.0.2 (and 7 original videos we’re delighted to watch in it**)](https://medium.com/paratii/paratii-player-v0-0-2-and-7-original-videos-were-delighted-to-watch-in-it-887302fda868)
 
 ## Installation
 
