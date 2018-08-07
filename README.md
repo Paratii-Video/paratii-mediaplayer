@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/CmTafs7.png" width="900">
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard) <img src="https://github.com/Paratii-Video/paratiisite/blob/master/rebrand/src/svgs/paratii-logo.svg" width="200">
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 
 🚨 This is software in active development, so you will likely find bugs. Especially if reading on an iPhone. We ❤️ people who point them out to us on Telegram or via a Github issue.
