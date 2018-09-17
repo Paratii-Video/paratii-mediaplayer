@@ -57,7 +57,12 @@
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "abortcontroller-polyfill": "^1.1.9",
+    "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#ab099655e34fbedf689489bb6d299efc418e546e",
+    "hlsjs-lp-loader": "github:ya7ya/hlsjs-lp-loader#master",
+    "ipfs": "github:Paratii-Video/js-ipfs#paratii/v0.28.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Paratii-Video/paratii-mediaplayer.git"
@@ -69,6 +74,7 @@
   "peerDependencies": {
     "clappr": "^0.2.78",
     "hlsjs-ipfs-loader": "github:ya7ya/hlsjs-ipfs-loader#ab099655e34fbedf689489bb6d299efc418e546e",
+    "hlsjs-lp-loader": "github:ya7ya/hlsjs-lp-loader#master",
     "ipfs": "github:Paratii-Video/js-ipfs#paratii/v0.28.2",
     "ipfs-bitswap": "^0.19.0",
     "react": "^16.2.0",
