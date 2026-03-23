@@ -3,6 +3,7 @@
 const Clappr = require("clappr");
 const HlsjsIpfsLoader = require("hlsjs-ipfs-loader");
 const IPFS = require("ipfs");
+const ChromecastPlugin = require("clappr-chromecast-plugin");
 
 module.exports = ({
   selector,
@@ -11,6 +12,7 @@ module.exports = ({
   mimeType,
   ipfsHash,
   node,
+  chromecast,
   ...rest
 }) => {
   const ipfsNode =
@@ -29,6 +31,14 @@ module.exports = ({
         ]
       }
     });
+
+  const plugins = rest.plugins || {};
+  delete rest.plugins;
+  const corePlugins = plugins.core || [];
+
+  if (chromecast !== false) {
+    corePlugins.push(ChromecastPlugin);
+  }
 
   const player = new Clappr.Player({
     source,
@@ -51,6 +61,10 @@ module.exports = ({
         maxLoadingDelay: 2,
         maxStarvationDelay: 2
       }
+    },
+    plugins: {
+      ...plugins,
+      core: corePlugins
     },
     ...rest
   });

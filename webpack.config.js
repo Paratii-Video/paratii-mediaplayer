@@ -88,7 +88,8 @@ var config = {
     clappr: "clappr",
     "hlsjs-ipfs-loader": "hlsjs-ipfs-loader",
     ipfs: "ipfs",
-    "ipfs-bitswap": "ipfs-bitswap"
+    "ipfs-bitswap": "ipfs-bitswap",
+    "clappr-chromecast-plugin": "clappr-chromecast-plugin"
   }
 };
 
